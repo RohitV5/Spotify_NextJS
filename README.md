@@ -36,3 +36,8 @@ PR message sample =>  Appname/chore/commit-message
 
 Setup Github Action
 https://www.youtube.com/watch?v=IrPz0kd2FTk
+
+Semantic Versioning 
+https://www.youtube.com/watch?v=Ob9llA_QhQY
+Major.Minor.Patch eg. 1.2.0
+
