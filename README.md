@@ -28,3 +28,11 @@ This will create the eslintrc file for lint config
 
 For Validating commit message use commitlint
 https://commitlint.js.org/#/./guides-local-setup?id=guides-local-setup
+
+Commit Type => "chore", "ci", "docs", "feat", "fix", "test", "style"
+Sample Commit Message => chore: Commit message , chore: Ticket_ID
+
+PR message sample =>  Appname/chore/commit-message
+
+Setup Github Action
+https://www.youtube.com/watch?v=IrPz0kd2FTk
