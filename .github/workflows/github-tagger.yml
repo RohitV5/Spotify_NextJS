@@ -1,11 +1,8 @@
 name: 'CI Tagger'
 on:
-    push:
-      branches:
-        - main
-        - master
-        tags:
-          - '*'
+  push:
+    tags:
+      - '*'
 
 jobs:
   release:
