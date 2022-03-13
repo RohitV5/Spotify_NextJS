@@ -19,3 +19,12 @@
 This will create the eslintrc file for lint config
 
 - npm install prettier eslint-config-prettier eslint-plugin-prettier --save-dev
+
+
+# Husky Pre Commit Hooks 
+    - Hooks allow us to to run some code on certain commit operation.
+    npx husky-init && npm install
+    fallback for powershell -> npx husky-init;npm install 
+
+For Validating commit message use commitlint
+https://commitlint.js.org/#/./guides-local-setup?id=guides-local-setup

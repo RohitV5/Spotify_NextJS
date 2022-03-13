@@ -46,6 +46,7 @@
     }
   },
   "ignorePatterns": [
+    "commitlint.config.js",
     "tailwind.config.js",
     "prettier.config.js",
     "postcss.config.js",
