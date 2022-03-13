@@ -4,8 +4,8 @@ on:
       branches:
         - main
         - master
-        tags:
-          - '*'
+    tags:
+      - '*'
 
 jobs:
   release:
