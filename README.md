@@ -32,6 +32,7 @@ https://commitlint.js.org/#/./guides-local-setup?id=guides-local-setup
 Commit Type => "chore", "ci", "docs", "feat", "fix", "test", "style"
 Sample Commit Message => chore: Commit message , chore: Ticket_ID
 
+Commit Message: chore: Github tagger workflow
 PR message sample =>  Appname/chore/commit-message
 
 Setup Github Action
@@ -40,4 +41,11 @@ https://www.youtube.com/watch?v=IrPz0kd2FTk
 Semantic Versioning 
 https://www.youtube.com/watch?v=Ob9llA_QhQY
 Major.Minor.Patch eg. 1.2.0
+
+Note: Tagger workflow works only after creating one release manually.
+
+git tag v0.3.0
+git push origin v0.3.0
+
+Time: 27:10
 

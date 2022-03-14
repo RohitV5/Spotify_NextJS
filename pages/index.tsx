@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import Sidebar from '../components/Sidebar';
 
 // eslint-disable-next-line react/function-component-definition
 const Home: NextPage = () => (
@@ -10,7 +11,7 @@ const Home: NextPage = () => (
     </Head>
     <h1>This is a dope spotify 2.0 build</h1>
     <main>
-      {/* Sidebar */}
+      <Sidebar />
       {/* Center  */}
     </main>
     <div>{/* Player  */}</div>
