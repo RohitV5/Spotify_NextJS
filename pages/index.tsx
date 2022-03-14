@@ -4,6 +4,7 @@ import Sidebar from '../components/Sidebar';
 
 // eslint-disable-next-line react/function-component-definition
 const Home: NextPage = () => (
+  // eslint-disable-next-line prettier/prettier
   <div className="flex flex-col items-center justify-center min-h-screen py-2">
     <Head>
       <title>Create Next App</title>

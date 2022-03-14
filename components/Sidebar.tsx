@@ -1,16 +1,16 @@
 import {
   HomeIcon,
-  SearchIcon,
-  LibraryIcon,
-  PlusCircleIcon,
+  // SearchIcon,
+  // LibraryIcon,
+  // PlusCircleIcon,
 } from '@heroicons/react/outline';
 
 const Sidebar = function () {
   return (
     <div>
       <div>
-        <button>
-          <HomeIcon className="w-5 h-5"></HomeIcon>
+        <button type="button">
+          <HomeIcon className="h-5 w-5" />
         </button>
       </div>
     </div>
