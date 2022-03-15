@@ -32,7 +32,7 @@
     "func-names": "off",
     "linebreak-style": ["error", "windows"],
     "prettier/prettier": [
-      "error",
+      "warn",
       {
         "endOfLine": "auto"
       }
