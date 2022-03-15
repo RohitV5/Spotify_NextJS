@@ -1,16 +1,17 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import Sidebar from '../components/Sidebar';
 
 // eslint-disable-next-line react/function-component-definition
 const Home: NextPage = () => (
-  <div className="flex flex-col items-center justify-center min-h-screen py-2">
+  // eslint-disable-next-line prettier/prettier
+  <div className="">
     <Head>
       <title>Create Next App</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <h1>This is a dope spotify 2.0 build</h1>
     <main>
-      {/* Sidebar */}
+      <Sidebar />
       {/* Center  */}
     </main>
     <div>{/* Player  */}</div>

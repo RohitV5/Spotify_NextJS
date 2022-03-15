@@ -9,7 +9,7 @@
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    // "plugin:prettier/recommended",
+    "plugin:prettier/recommended",
     "airbnb",
     "airbnb-typescript"
   ],
@@ -28,6 +28,14 @@
         "namedComponents": "function-expression",
         "unnamedComponents": "function-expression"
       }
+    ],
+    "func-names": "off",
+    "linebreak-style": ["error", "windows"],
+    "prettier/prettier": [
+      "warn",
+      {
+        "endOfLine": "auto"
+      }
     ]
   },
   "parser": "@typescript-eslint/parser",
@@ -39,7 +47,7 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "plugins": ["react", "@typescript-eslint","prettier"], //order matters
+  "plugins": ["react", "@typescript-eslint", "prettier"], //order matters
   "settings": {
     "react": {
       "version": "detect"
