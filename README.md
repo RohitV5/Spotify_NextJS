@@ -1,3 +1,5 @@
+# Tutorial Credit : https://www.youtube.com/watch?v=3xrko3GpYoU&t=2167s
+
 # For new project with next typescript and tailwind
  - npx create-next-app --example with-tailwindcss .
 
@@ -47,5 +49,12 @@ Note: Tagger workflow works only after creating one release manually.
 git tag v0.3.0
 git push origin v0.3.0
 
-Time: 27:10
+For authentication we used next-auth - https://next-auth.js.org/
+For typescript example of next auth - https://github.com/nextauthjs/next-auth-typescript-example
 
+Spotify Web API Node : https://github.com/thelinmichael/spotify-web-api-node
+
+Time: 47:10
+
+
+1:34 for user variable in nextauth
