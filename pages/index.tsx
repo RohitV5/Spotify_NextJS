@@ -5,7 +5,7 @@ import Sidebar from '../components/Sidebar';
 // eslint-disable-next-line react/function-component-definition
 const Home: NextPage = () => (
   // eslint-disable-next-line prettier/prettier
-  <div className="">
+  <div className="h-screen overflow-hidden bg-black">
     <Head>
       <title>Create Next App</title>
       <link rel="icon" href="/favicon.ico" />

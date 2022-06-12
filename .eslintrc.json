@@ -20,6 +20,14 @@
       { "argsIgnorePattern": "^_" }
     ],
     "@typescript-eslint/no-use-before-define": "off",
+    "@typescript-eslint/no-misused-promises": [
+      "error",
+      {
+        "checksVoidReturn": false
+      }
+    ],
+    "@typescript-eslint/no-unsafe-any": "off",
+    "react/jsx-one-expression-per-line": ["off", { "allow": "none" }],
     "react/react-in-jsx-scope": "off",
     "react/jsx-props-no-spreading": ["error", { "custom": "ignore" }],
     "react/function-component-definition": [

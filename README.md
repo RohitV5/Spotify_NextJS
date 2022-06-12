@@ -1,3 +1,5 @@
+# Tutorial Credit : https://www.youtube.com/watch?v=3xrko3GpYoU&t=2167s
+
 # For new project with next typescript and tailwind
  - npx create-next-app --example with-tailwindcss .
 
@@ -32,8 +34,9 @@ https://commitlint.js.org/#/./guides-local-setup?id=guides-local-setup
 Commit Type => "chore", "ci", "docs", "feat", "fix", "test", "style"
 Sample Commit Message => chore: Commit message , chore: Ticket_ID
 
-Commit Message: chore: Github tagger workflow
-PR message sample =>  Appname/chore/commit-message
+Commit and PR rules
+Note: Commit Message: feat: Github tagger workflow
+Note: PR message sample =>  Appname/chore/commit-message
 
 Setup Github Action
 https://www.youtube.com/watch?v=IrPz0kd2FTk
@@ -47,5 +50,12 @@ Note: Tagger workflow works only after creating one release manually.
 git tag v0.3.0
 git push origin v0.3.0
 
-Time: 27:10
+For authentication we used next-auth - https://next-auth.js.org/
+For typescript example of next auth - https://github.com/nextauthjs/next-auth-typescript-example
 
+Spotify Web API Node : https://github.com/thelinmichael/spotify-web-api-node
+
+Time: 47:10
+
+
+1:34 for user variable in nextauth
