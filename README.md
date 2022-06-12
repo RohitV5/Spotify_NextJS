@@ -34,8 +34,9 @@ https://commitlint.js.org/#/./guides-local-setup?id=guides-local-setup
 Commit Type => "chore", "ci", "docs", "feat", "fix", "test", "style"
 Sample Commit Message => chore: Commit message , chore: Ticket_ID
 
-Commit Message: chore: Github tagger workflow
-PR message sample =>  Appname/chore/commit-message
+Commit and PR rules
+Note: Commit Message: feat: Github tagger workflow
+Note: PR message sample =>  Appname/chore/commit-message
 
 Setup Github Action
 https://www.youtube.com/watch?v=IrPz0kd2FTk
