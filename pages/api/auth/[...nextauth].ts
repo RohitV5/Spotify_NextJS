@@ -1,5 +1,5 @@
-import NextAuth, { User } from 'next-auth';
-import { getToken, JWT } from 'next-auth/jwt';
+import NextAuth, { Session } from 'next-auth';
+import { JWT } from 'next-auth/jwt';
 import SpotifyProvider from 'next-auth/providers/spotify';
 import spotifyApi, { LOGIN_URL } from '../../../lib/spotify';
 
@@ -9,16 +9,20 @@ import spotifyApi, { LOGIN_URL } from '../../../lib/spotify';
 
 const refreshAccessToken = async (token: JWT) => {
   try {
-    spotifyApi.setAccessToken(token.access_token as string);
-    spotifyApi.setRefreshToken(token.refresh_token as string);
+    spotifyApi.setAccessToken(token.accessToken as string);
+    spotifyApi.setRefreshToken(token.refreshToken as string);
 
     const { body: refreshedToken } = await spotifyApi.refreshAccessToken();
+
+    // spotifyApi.setAccessToken(refreshedToken.access_token);
+    // const userData = await spotifyApi.getMe();
 
     return {
       ...token,
       accessToken: refreshedToken.access_token,
       accessTokenExpires: Date.now() + refreshedToken.expires_in * 1000,
       refreshToken: refreshedToken.refresh_token ?? token.refreshToken,
+      // ...userData,
       // if first value exist use that otherwise fallback
     };
   } catch (error) {
@@ -61,12 +65,15 @@ export default NextAuth({
     async jwt({ token, account, user }) {
       // initial sign in
       if (account && user) {
+        // spotifyApi.setAccessToken(account.access_token as string);
+        // const userData = await spotifyApi.getMe();
         return {
-          ...getToken,
-          refreshToken: account.refresh_token || '',
+          ...token,
           accessToken: account.access_token || '',
+          refreshToken: account.refresh_token || '',
           username: account.provideAccountId || '',
           accessTokenExpires: (account.expires_at || 0) * 1000 || 0,
+          // ...userData,
           // handling expiry time in milliseconds
         };
       }
@@ -92,13 +99,21 @@ export default NextAuth({
     },
 
     async session({ session, token }) {
-      const sessionReturn = session;
-      sessionReturn.user = token?.user as User;
-      sessionReturn.accessToken = token.accessToken;
+      spotifyApi.setAccessToken(token.accessToken as string);
+      const userData = await spotifyApi.getMe();
+      const sessionReturn: Session = session;
+      const images = userData.body.images ? userData.body.images : [];
+      // sessionReturn.user = token?.username as User;
       sessionReturn.accessToken = token.accessToken;
       sessionReturn.error = token.error;
+      sessionReturn.user = {
+        email: userData.body.email,
+        name: userData.body.display_name,
+        image: images.length > 0 ? images[0].url : '',
+      };
 
       return sessionReturn;
     },
   },
+  debug: true,
 });

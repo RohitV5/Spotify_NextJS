@@ -6,30 +6,33 @@ import {
   HeartIcon,
   RssIcon,
 } from '@heroicons/react/outline';
+import { signOut } from 'next-auth/react';
 
 const Sidebar = function () {
+  // const { data: session, status } = useSession();
   return (
     <div className="p-5 text-sm text-gray-500">
       <div>
         <button
           type="button"
           className="flex items-center space-x-2 hover:text-white"
+          onClick={() => signOut()}
         >
-          <HomeIcon className="h-5 w-5" />
+          <HomeIcon className="w-5 h-5" />
           <p>Home</p>
         </button>
         <button
           type="button"
           className="flex items-center space-x-2 hover:text-white"
         >
-          <SearchIcon className="h-5 w-5" />
+          <SearchIcon className="w-5 h-5" />
           <p>Search</p>
         </button>
         <button
           type="button"
           className="flex items-center space-x-2 hover:text-white"
         >
-          <LibraryIcon className="h-5 w-5" />
+          <LibraryIcon className="w-5 h-5" />
           <p>Library</p>
         </button>
         <hr className="border-t-[0.1px] border-gray-900" />
@@ -37,21 +40,21 @@ const Sidebar = function () {
           type="button"
           className="flex items-center space-x-2 hover:text-white"
         >
-          <PlusCircleIcon className="h-5 w-5" />
+          <PlusCircleIcon className="w-5 h-5" />
           <p>Create Playlist</p>
         </button>
         <button
           type="button"
           className="flex items-center space-x-2 hover:text-white"
         >
-          <HeartIcon className="h-5 w-5" />
+          <HeartIcon className="w-5 h-5" />
           <p>Liked Songs</p>
         </button>
         <button
           type="button"
           className="flex items-center space-x-2 hover:text-white"
         >
-          <RssIcon className="h-5 w-5" />
+          <RssIcon className="w-5 h-5" />
           <p>Your episodes</p>
         </button>
         <hr className="border-t-[0.1px] border-gray-900" />
