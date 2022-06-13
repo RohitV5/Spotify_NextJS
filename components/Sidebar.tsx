@@ -18,21 +18,21 @@ const Sidebar = function () {
           className="flex items-center space-x-2 hover:text-white"
           onClick={() => signOut()}
         >
-          <HomeIcon className="w-5 h-5" />
+          <HomeIcon className="h-5 w-5" />
           <p>Home</p>
         </button>
         <button
           type="button"
           className="flex items-center space-x-2 hover:text-white"
         >
-          <SearchIcon className="w-5 h-5" />
+          <SearchIcon className="h-5 w-5" />
           <p>Search</p>
         </button>
         <button
           type="button"
           className="flex items-center space-x-2 hover:text-white"
         >
-          <LibraryIcon className="w-5 h-5" />
+          <LibraryIcon className="h-5 w-5" />
           <p>Library</p>
         </button>
         <hr className="border-t-[0.1px] border-gray-900" />
@@ -40,21 +40,21 @@ const Sidebar = function () {
           type="button"
           className="flex items-center space-x-2 hover:text-white"
         >
-          <PlusCircleIcon className="w-5 h-5" />
+          <PlusCircleIcon className="h-5 w-5" />
           <p>Create Playlist</p>
         </button>
         <button
           type="button"
           className="flex items-center space-x-2 hover:text-white"
         >
-          <HeartIcon className="w-5 h-5" />
+          <HeartIcon className="h-5 w-5" />
           <p>Liked Songs</p>
         </button>
         <button
           type="button"
           className="flex items-center space-x-2 hover:text-white"
         >
-          <RssIcon className="w-5 h-5" />
+          <RssIcon className="h-5 w-5" />
           <p>Your episodes</p>
         </button>
         <hr className="border-t-[0.1px] border-gray-900" />
