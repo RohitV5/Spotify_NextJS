@@ -6,11 +6,11 @@ import {
   HeartIcon,
   RssIcon,
 } from '@heroicons/react/outline';
-import { signOut, useSession } from 'next-auth/react';
+import { signOut } from 'next-auth/react';
 
 const Sidebar = function () {
-  const { data: session, status } = useSession();
-  console.log(session)
+  // const { data: session, status } = useSession();
+  // console.log(session)
   return (
     <div className="h-screen p-5 overflow-y-scroll text-sm text-gray-500 border-r border-gray-900 scrollbar-hide">
       <div>
