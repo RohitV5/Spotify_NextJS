@@ -6,24 +6,26 @@ import {
   HeartIcon,
   RssIcon,
 } from '@heroicons/react/outline';
-import { signOut } from 'next-auth/react';
+import { signOut, useSession } from 'next-auth/react';
 import { useEffect, useState } from 'react';
 import useSpotify from '../hooks/useSpotify';
 import { PlaylistObjectSimplified } from '../types/spotify.types';
+import { ariaHandleKeyPress } from '../utils/utils';
 
 const Sidebar = function () {
-  // const { data: session, status } = useSession();
-  const [playlists, setPlaylists] = useState<PlaylistObjectSimplified[]>();
+  const { data: session } = useSession();
+  const [playlists, setPlaylists] = useState<PlaylistObjectSimplified[]>([]);
+  const [playlistId, setPlaylistId] = useState<string>();
+
   const spotifyApi = useSpotify();
-  // console.log(session)
 
   useEffect(() => {
     if (spotifyApi.getAccessToken()) {
       spotifyApi.getUserPlaylists().then((data) => {
-        setPlaylists(data.body.items);
+        setPlaylists([...data.body.items]);
       });
     }
-  }, []);
+  }, [setPlaylists, spotifyApi, session]);
 
   return (
     <div className="h-screen p-5 overflow-y-scroll text-sm text-gray-500 border-r border-gray-900 scrollbar-hide">
@@ -76,10 +78,23 @@ const Sidebar = function () {
 
         {/* Playlists... */}
         {playlists?.map((playlist) => (
-          <p key={playlist.id} className="cursor-pointer hover:text-white">
+          <p
+            key={playlist.id}
+            className="cursor-pointer hover:text-white"
+            onClick={() => {
+              setPlaylistId(playlist.id);
+            }}
+            onKeyPress={($event) => {
+              ariaHandleKeyPress(
+                $event,
+                setPlaylistId(playlist.id) as unknown as () => void,
+              );
+            }}
+          >
             {playlist.name}
           </p>
         ))}
+        {playlistId}
       </div>
     </div>
   );
