@@ -42,7 +42,7 @@
       }
     ],
     "func-names": "off",
-    "linebreak-style": ["error", "windows"],
+    "linebreak-style": ["off", "windows"],
     "prettier/prettier": [
       "warn",
       {
