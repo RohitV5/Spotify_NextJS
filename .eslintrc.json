@@ -26,6 +26,10 @@
         "checksVoidReturn": false
       }
     ],
+    "@typescript-eslint/no-unsafe-call": "off",
+    "@typescript-eslint/no-unsafe-member-access": "off",
+    "@typescript-eslint/no-floating-promises":"off",
+    "@typescript-eslint/no-unsafe-argument": "off",
     "@typescript-eslint/no-unsafe-any": "off",
     "react/jsx-one-expression-per-line": ["off", { "allow": "none" }],
     "react/react-in-jsx-scope": "off",
@@ -38,7 +42,7 @@
       }
     ],
     "func-names": "off",
-    "linebreak-style": ["error", "windows"],
+    "linebreak-style": ["off", "windows"],
     "prettier/prettier": [
       "warn",
       {

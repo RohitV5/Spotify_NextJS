@@ -14,6 +14,8 @@ const scopes = [
   'streaming',
   'user-read-private',
   'user-library-read',
+  'user-read-email',
+  'user-follow-read',
 ].join(',');
 
 const params = {
