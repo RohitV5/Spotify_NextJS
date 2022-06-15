@@ -11,7 +11,7 @@ function useSpotify() {
         signIn();
       }
 
-      spotifyApi.setAccessToken(session?.accessToken as string);
+      spotifyApi.setAccessToken((session?.accessToken as string) || '');
     }
   }, [session]);
   return spotifyApi;

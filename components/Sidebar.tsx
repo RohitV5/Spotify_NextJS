@@ -7,15 +7,21 @@ import {
   RssIcon,
 } from '@heroicons/react/outline';
 import { signOut, useSession } from 'next-auth/react';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import { useRecoilState } from 'recoil';
 import useSpotify from '../hooks/useSpotify';
 import { PlaylistObjectSimplified } from '../types/spotify.types';
 import { ariaHandleKeyPress } from '../utils/utils';
+import { playlistListState, playlistIdState } from '../atoms/playlistAtom';
 
 const Sidebar = function () {
   const { data: session } = useSession();
-  const [playlists, setPlaylists] = useState<PlaylistObjectSimplified[]>([]);
-  const [playlistId, setPlaylistId] = useState<string>();
+  const [playlists, setPlaylists] =
+    useRecoilState<PlaylistObjectSimplified[]>(playlistListState);
+  const [, setPlaylistId] = useRecoilState<string>(playlistIdState);
+
+  // In case the  set value is needed in this component
+  // const [playlistId , setPlaylistId] = useRecoilState<string>(playlistIdState);
 
   const spotifyApi = useSpotify();
 
@@ -94,7 +100,7 @@ const Sidebar = function () {
             {playlist.name}
           </p>
         ))}
-        {playlistId}
+        {/* {playlistId} */}
       </div>
     </div>
   );
