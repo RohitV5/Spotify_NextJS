@@ -35,6 +35,19 @@
     "react/jsx-one-expression-per-line": ["off", { "allow": "none" }],
     "react/react-in-jsx-scope": "off",
     "react/jsx-props-no-spreading": ["error", { "custom": "ignore" }],
+    "jsx-a11y/no-noninteractive-element-interactions": [
+      "off",
+      {
+        "handlers": [
+          "onClick",
+          "onMouseDown",
+          "onMouseUp",
+          "onKeyPress",
+          "onKeyDown",
+          "onKeyUp"
+        ]
+      }
+    ],
     "react/function-component-definition": [
       "error",
       {
