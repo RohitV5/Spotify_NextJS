@@ -5,14 +5,14 @@ import { shuffle } from 'lodash';
 import { useRecoilState } from 'recoil';
 import { playlistIdState, selectedPlaylistState } from '../atoms/playlistAtom';
 import useSpotify from '../hooks/useSpotify';
-import { PlaylistObjectSimplified } from '../types/spotify.types';
+import { PlaylistObjectFull } from '../types/spotify.types';
+import Songs from './Songs';
 
 const Center: FC = function () {
   const { data: session } = useSession();
   const [color, setColor] = useState<string>('');
-  const [, setSelectedPlaylist] = useRecoilState<PlaylistObjectSimplified>(
-    selectedPlaylistState,
-  );
+  const [selectedPlaylist, setSelectedPlaylist] =
+    useRecoilState<PlaylistObjectFull>(selectedPlaylistState);
   const [playlistId] = useRecoilState<string>(playlistIdState);
   const spotifyApi = useSpotify();
   // Another way to get recoil value
@@ -35,15 +35,22 @@ const Center: FC = function () {
   }, [playlistId]);
 
   useEffect(() => {
-    spotifyApi.getPlaylist(playlistId).then((data) => {
-      setSelectedPlaylist(data.body);
-    });
+    if (spotifyApi.getAccessToken()) {
+      spotifyApi
+        .getPlaylist(playlistId)
+        .then((data) => {
+          setSelectedPlaylist(data.body);
+        })
+        .catch((err) => {
+          throw err;
+        });
+    }
   }, [spotifyApi, playlistId]);
 
   return (
-    <div className="flex-grow text-white ">
+    <div className="flex-grow h-screen overflow-y-scroll scrollbar-hide">
       <header className="absolute top-5 right-8">
-        <div className="flex items-center p-1 pr-2 space-x-3 bg-black rounded-full cursor-pointer opacity-90 hover:opacity-80">
+        <div className="flex items-center p-1 pr-2 space-x-3 text-white bg-black rounded-full cursor-pointer opacity-90 hover:opacity-80">
           <img
             className="w-10 h-10 rounded-full"
             src={session?.user?.image || '/fallback-user-img.jpg'}
@@ -55,11 +62,23 @@ const Center: FC = function () {
       </header>
 
       <section
-        className={`flex items-end space-x-7 bg-gradient-to-b  ${color} to-black h-80 text-white padding-8`}
+        className={`flex items-end space-x-7 bg-gradient-to-b  ${color} to-black h-80 text-white p-8`}
       >
-        <img src="" alt="" />
-        <h1>{playlistId}</h1>
+        <img
+          className="shadow-2xl h-44 w-44"
+          src={selectedPlaylist?.images?.[0]?.url}
+          alt=""
+        />
+        <div>
+          <p>PLAYLIST</p>
+          <h1 className="text-2xl font-bold md:text-3xl xl:text-5xl">
+            {selectedPlaylist?.name}
+          </h1>
+        </div>
       </section>
+      <div>
+        <Songs />
+      </div>
     </div>
   );
 };

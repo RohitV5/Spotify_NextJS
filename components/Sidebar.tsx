@@ -34,7 +34,7 @@ const Sidebar = function () {
   }, [setPlaylists, spotifyApi, session]);
 
   return (
-    <div className="h-screen p-5 overflow-y-scroll text-sm text-gray-500 border-r border-gray-900 scrollbar-hide">
+    <div className="h-screen p-5 overflow-y-scroll text-xs text-sm text-gray-500 border-r border-gray-900 scrollbar-hide lg:text-sm sm:max-w-[12rem] lg:max-w-[15rem] hidden md:inline-flex">
       <div>
         <button
           type="button"

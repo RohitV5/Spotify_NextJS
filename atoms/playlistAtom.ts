@@ -1,16 +1,15 @@
 import { atom, RecoilState } from 'recoil';
-import { PlaylistObjectSimplified } from '../types/spotify.types';
+import { PlaylistObjectFull } from '../types/spotify.types';
 
-export const playlistListState: RecoilState<PlaylistObjectSimplified[]> = atom({
+export const playlistListState: RecoilState<PlaylistObjectFull[]> = atom({
   key: 'playlistListState',
   default: null,
 });
 
-export const selectedPlaylistState: RecoilState<PlaylistObjectSimplified> =
-  atom({
-    key: 'selectedPlaylistState',
-    default: null,
-  });
+export const selectedPlaylistState: RecoilState<PlaylistObjectFull> = atom({
+  key: 'selectedPlaylistState',
+  default: null,
+});
 
 export const playlistIdState: RecoilState<string> = atom({
   key: 'playlistIdState',
