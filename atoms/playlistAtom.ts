@@ -13,7 +13,7 @@ export const selectedPlaylistState: RecoilState<PlaylistObjectFull> = atom({
 
 export const playlistIdState: RecoilState<string> = atom({
   key: 'playlistIdState',
-  default: '52VJLpynVIfQsk0TCjSm84',
+  default: '37i9dQZEVXbownz9788yY1',
 });
 
 export default { playlistIdState, playlistListState, selectedPlaylistState };

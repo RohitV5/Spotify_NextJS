@@ -61,4 +61,4 @@ Spotify Web API Node : https://github.com/thelinmichael/spotify-web-api-node
 Time: 47:10
 
 
-2:54 for user variable in nextauth
+3:24 for user variable in nextauth

@@ -1,5 +1,6 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import { ChevronDownIcon } from '@heroicons/react/outline';
-import { useSession } from 'next-auth/react';
+import { signOut, useSession } from 'next-auth/react';
 import { FC, useEffect, useState } from 'react';
 import { shuffle } from 'lodash';
 import { useRecoilState } from 'recoil';
@@ -7,6 +8,7 @@ import { playlistIdState, selectedPlaylistState } from '../atoms/playlistAtom';
 import useSpotify from '../hooks/useSpotify';
 import { PlaylistObjectFull } from '../types/spotify.types';
 import Songs from './Songs';
+import { ariaHandleKeyPress } from '../utils/utils';
 
 const Center: FC = function () {
   const { data: session } = useSession();
@@ -50,7 +52,13 @@ const Center: FC = function () {
   return (
     <div className="flex-grow h-screen overflow-y-scroll scrollbar-hide">
       <header className="absolute top-5 right-8">
-        <div className="flex items-center p-1 pr-2 space-x-3 text-white bg-black rounded-full cursor-pointer opacity-90 hover:opacity-80">
+        <div
+          className="flex items-center p-1 pr-2 space-x-3 text-white bg-black rounded-full cursor-pointer opacity-90 hover:opacity-80"
+          onClick={() => {
+            signOut();
+          }}
+          onKeyPress={($event) => ariaHandleKeyPress($event, signOut)}
+        >
           <img
             className="w-10 h-10 rounded-full"
             src={session?.user?.image || '/fallback-user-img.jpg'}
