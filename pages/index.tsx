@@ -2,6 +2,7 @@ import type { NextPage } from 'next';
 import { getSession } from 'next-auth/react';
 import Head from 'next/head';
 import Center from '../components/Center';
+import Player from '../components/Player';
 import Sidebar from '../components/Sidebar';
 
 // eslint-disable-next-line react/function-component-definition
@@ -16,7 +17,9 @@ const Home: NextPage = () => (
       <Center />
       {/* Center  */}
     </main>
-    <div>{/* Player  */}</div>
+    <div className="sticky bottom-0">
+      <Player />
+    </div>
   </div>
 );
 
