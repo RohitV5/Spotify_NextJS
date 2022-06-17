@@ -1,3 +1,6 @@
+#SPOTIFY
+![spotify_nextjs](https://user-images.githubusercontent.com/23634935/174238318-ca5b99f5-49f9-4f58-9661-106c5dc89b17.png)
+
 # Tutorial Credit : https://www.youtube.com/watch?v=3xrko3GpYoU&t=2167s
 
 # For new project with next typescript and tailwind
