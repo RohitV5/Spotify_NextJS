@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/no-static-element-interactions */
 import { ChevronDownIcon } from '@heroicons/react/outline';
 import { signOut, useSession } from 'next-auth/react';
 import { FC, useEffect, useState } from 'react';
@@ -53,6 +52,8 @@ const Center: FC = function () {
     <div className="flex-grow h-screen overflow-y-scroll scrollbar-hide">
       <header className="absolute top-5 right-8">
         <div
+          role="button"
+          tabIndex={0}
           className="flex items-center p-1 pr-2 space-x-3 text-white bg-black rounded-full cursor-pointer opacity-90 hover:opacity-80"
           onClick={() => {
             signOut();
