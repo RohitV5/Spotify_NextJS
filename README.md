@@ -1,5 +1,6 @@
-#SPOTIFY
-![spotify_nextjs](https://user-images.githubusercontent.com/23634935/174427104-3f077664-5b64-4c3f-ab8d-4de43be6d0c2.png)
+<h1 align="center"> SPOTIFY REMOTE CONTROL </h1>
+![spotify_nextjs](https://user-images.githubusercontent.com/23634935/174427302-1af1e468-d22b-4e9c-8721-02ea54754f88.png)
+
 
 # Tutorial Credit : https://www.youtube.com/watch?v=3xrko3GpYoU&t=2167s
 
