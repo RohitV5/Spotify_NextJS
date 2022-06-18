@@ -1,4 +1,5 @@
 <h1 align="center"> SPOTIFY REMOTE CONTROL </h1>
+
 ![spotify_nextjs](https://user-images.githubusercontent.com/23634935/174427302-1af1e468-d22b-4e9c-8721-02ea54754f88.png)
 
 
